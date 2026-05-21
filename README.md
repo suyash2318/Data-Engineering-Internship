@@ -1,5 +1,4 @@
 # python-data-cleaning
-# Python Data Cleaning
 
 This project demonstrates basic data exploration and cleaning using Python Pandas.
 
