@@ -64,7 +64,8 @@ This project demonstrates SQL-based data analysis using Python, Pandas, SQLite, 
 
 * Superstore Sales Dataset (.csv.gz)
 
-	# SuyashMaheshwari_JECRC(College)_Week-3_SQL(Subqueries)
+
+# SuyashMaheshwari_JECRC(College)_Week-3_SQL(Subqueries)
 
 What I used and when:
 
@@ -83,8 +84,10 @@ The data is heavily right-skewed with a small number of high-value customers pul
 
 The project successfully demonstrated how SQL queries can be used for business-oriented sales analysis, customer insights, product performance evaluation, and data quality validation using a real-world dataset.
 
-	# SuyashMaheshwari_JECRC(College)_Week-4_AZURE
- Azure Cloud Fundamentals and Data Pipeline Implementation using ADF
+
+# SuyashMaheshwari_JECRC(College)_Week-4_Azure Cloud Fundamentals and Data Pipeline Implementation using ADF
+
+ 
 Objective
 To understand Azure cloud concepts and build an end-to-end data pipeline using Azure Storage Account and Azure Data Factory.
 
