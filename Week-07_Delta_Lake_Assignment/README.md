@@ -1,39 +1,36 @@
-# Week 7: Incremental Data Processing using Delta Lake
+# Week 7: Incremental Data Processing using Delta Lake (Superstore Dataset)
 
-This assignment demonstrates how to implement an incremental data ingestion pipeline (SCD Type 1) using PySpark and Delta Lake. 
-
-Incremental data loading ensures that changed records are updated in place and new records are appended, maintaining a single clean, deduplicated version of the master table without rewriting the entire dataset.
+This assignment demonstrates how to implement an incremental data ingestion pipeline (SCD Type 1) using PySpark and Delta Lake, processing the Kaggle Superstore sales dataset.
 
 ---
 
 ## Steps Executed
 
 1. **Spark & Delta Lake Setup**: Configured the PySpark SparkSession extensions to support the Delta catalog and execution engines.
-2. **Initial Ingestion**: Loaded `customer_master.csv` containing raw historical customer records.
+2. **Dataset Download**: Used `kagglehub` to programmatically fetch the `vivek468/superstore-dataset-final` containing `Sample - Superstore.csv`.
 3. **Data Cleaning**:
-   - Replaced missing values (`email` nulls) with a placeholder.
-   - Removed duplicates on `customer_id` using Pandas/PySpark dataframe cleaning operations.
-4. **Delta Table Conversion**: Saved the cleaned base master dataset as a Delta table.
-5. **Incremental Load**: Read `customer_incremental.csv` containing both new customers and modifications to existing ones.
-6. **Delta Merge Operation**: Executed a `MERGE` operation (matching on `customer_id` keys) to:
-   - Update matching records with updated email, name, and city.
+   - Cleaned column headers to lower snake_case.
+   - Removed duplicates on `row_id` and handled missing customer records.
+4. **Delta Table Conversion**: Saved the cleaned base Superstore dataset as a Delta table.
+5. **Incremental Load**: Created a secondary dataframe representing incremental transactions (updates to existing sales/profit and new entries).
+6. **Delta Merge Operation**: Executed a `MERGE` operation (matching on `row_id` keys) to:
+   - Update matching records with modified sales/profit metrics.
    - Insert new records if they do not match.
-7. **Validation**: Verified that the row counts are consistent and that the `customer_id` keys remain unique.
+7. **Validation**: Verified that the row counts are correct and that the primary key (`row_id`) remains unique.
 
 ---
 
 ## Output Files
-- **Data Directory**: [data/](file:///d:/My%20Projects/CelabalWeek8/Week-07_Delta_Lake_Assignment/data/)
-  - `customer_master.csv`: Base customer database.
-  - `customer_incremental.csv`: Incremental update records.
 - **Jupyter Notebook**: [notebooks/delta_scd_assignment.ipynb](file:///d:/My%20Projects/CelabalWeek8/Week-07_Delta_Lake_Assignment/notebooks/delta_scd_assignment.ipynb)
+- **Data Folder**: [data/](file:///d:/My%20Projects/CelabalWeek8/Week-07_Delta_Lake_Assignment/data/)
+- **Screenshots Directory**: [screenshots/](file:///d:/My%20Projects/CelabalWeek8/Week-07_Delta_Lake_Assignment/screenshots/)
 
 ---
 
 ## Verification & Validations
-- Total row count of final table is `5` rows.
-- Validated that `customer_id` keys are completely unique (`assert total_rows == unique_ids`).
+- Total row count is validated to increase by the exact count of new inserts (Original Count + 1).
+- Validated that `row_id` keys are completely unique (`assert final_count == unique_count`).
 - Verified updates:
-  - Customer `102` (`Jane Smith`) was updated to email `jane_new@example.com` and city `San Francisco`.
-  - Customer `104` (`Alice Brown`) was updated with email `alice@example.com`.
-  - Customer `106` (`Charlie Green`) was inserted.
+  - Row ID `1` was successfully updated to sales `350.00` and profit `50.00`.
+  - Row ID `2` was successfully updated to sales `800.00` and profit `120.00`.
+  - Row ID `99999` was successfully appended.

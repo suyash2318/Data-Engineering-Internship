@@ -1,6 +1,0 @@
-customer_id,customer_name,email,city,last_updated
-101,John Doe,john@example.com,New York,2026-07-01
-102,Jane Smith,jane@example.com,Los Angeles,2026-07-02
-103,Bob Johnson,bob@example.com,Chicago,2026-07-03
-104,Alice Brown,,Houston,2026-07-04
-105,Jane Smith,jane@example.com,Los Angeles,2026-07-02
