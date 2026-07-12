@@ -1,0 +1,9 @@
+=== E-Commerce Analytics Data Cleaning Report ===
+Generated at: 2026-07-12 19:20:22
+
+Issues Identified and Cleaned:
+- Products: normalized 13 product names
+- Customers: found 11 invalid email(s) — IDs: [61, 178, 179, 240, 281, 288, 387, 438, 518, 524, 532]
+- Orders: corrected 121 dates from DD-MM-YYYY format
+- Orders: 120 rows have NULL customer_id (kept as-is)
+- Order Items: 0 row(s) reference a non-existent order_id

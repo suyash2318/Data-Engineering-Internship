@@ -1,0 +1,5 @@
+*.db
+*.db-journal
+**/raw/*.csv
+**/cleaned/*.csv
+**/__pycache__/

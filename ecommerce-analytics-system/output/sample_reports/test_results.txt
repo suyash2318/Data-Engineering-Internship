@@ -1,0 +1,20 @@
+﻿
+============================================================
+  Edge Case Tests  (Intern Spec ΓÇö Part 5)
+============================================================
+
+  Required Tests:
+  --------------------------------------------------------
+  [PASS] Test 1: Orphan order_id in order_items
+  [PASS] Test 2: discount_percent > 100
+         (zero-quantity rows in cleaned DB: 0)  [PASS] Test 3: quantity = 0
+  [PASS] Test 4: order_date in the future
+
+  Bonus Tests:
+  --------------------------------------------------------
+  [PASS] Bonus: Revenue formula accuracy
+         (return rows in DB: 209 / 6363 = 3.3%)  [PASS] Bonus: Negative quantity = return
+
+  Results: 6 passed, 0 failed out of 6 tests
+  [PASS] All tests passed!
+
