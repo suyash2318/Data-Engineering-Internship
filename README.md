@@ -1,140 +1,57 @@
-# SuyashMaheshwari_JECRC(College)_Week1_python-data-cleaning
+# Celabal Technologies - Data Engineering Internship
 
-This project demonstrates basic data exploration and cleaning using Python Pandas.
+A comprehensive repository containing all my project assignments and data pipelines developed during my Data Engineering Internship at Celabal Technologies.
 
-## Tasks Performed
-- Loaded CSV dataset
-- Explored dataset
-- Handled missing values
-- Filtered rows and selected columns
-- Removed duplicates
-- Created derived column
-- Saved cleaned dataset
+## 📁 Repository Directory
 
-## Tools Used
-- Python
-- Pandas
-- Jupyter Notebook
+This repository is structured sequentially to showcase learning milestones and progress:
 
+| Week / Assignment | Topic | Description | Technologies |
+| :--- | :--- | :--- | :--- |
+| **[Week 1](./Week-01_Python_Data_Cleaning)** | Python Data Cleaning | Raw data parsing, filtering, handling duplicates/missing entries | `Python`, `Pandas`, `Jupyter Notebook` |
+| **[Week 2](./Week-02_SQL_Data_Analysis)** | SQL Data Analysis | Loading datasets into SQLite and performing analytical queries | `SQL`, `SQLite`, `Pandas` |
+| **[Week 3](./Week-03_SQL_Subqueries)** | SQL Subqueries & Joins | Utilizing CTEs, window functions, and subqueries for sales analysis | `SQL`, `CTEs`, `Window Functions` |
+| **[Week 4](./Week-04_Azure_Data_Factory)** | Azure ADF Pipelines | Building end-to-end blob storage copy pipelines with metadata validation | `Azure Blob Storage`, `Data Factory`, `IAM` |
+| **[Week 5](./Week-05_Spark_Introduction)** | Spark Dataframes | Loading and analyzing datasets with Apache Spark DataFrames | `Apache Spark`, `PySpark` |
+| **[Week 6](./Week-06_PySpark_DataFrame)** | Advanced PySpark | Executing PySpark operations on larger datasets and optimizing execution | `Apache Spark`, `PySpark` |
+| **[Week 8](./Week-08_Ecommerce_Analytics)** | E-Commerce Analytics System | Refactored transaction data pipeline with robust cleaning and CLI | `Python`, `SQLite`, `Pandas`, `CLI` |
 
-# SuyashMaheshwari_JECRC(College)_Week2_SQL_Data_Analysis
+---
 
-This project demonstrates SQL-based data analysis using Python, Pandas, SQLite, and Jupyter Notebook on the Superstore sales dataset.
+## 🛠️ Assignment Summaries
 
-## Tasks Performed
+### Week 1: Python Data Cleaning
+*Demonstrates basic data exploration and cleaning using Pandas.*
+- Loaded CSV datasets and handled missing values.
+- Removed duplicates and performed column selection.
+- Created derived fields and exported clean files.
 
-* Loaded compressed CSV dataset
-* Explored dataset structure and columns
-* Converted dataset into SQL table using SQLite
-* Performed filtering using WHERE clause
-* Applied aggregation using GROUP BY
-* Calculated sales, profit, quantity, and averages
-* Identified top products and top customers
-* Analyzed monthly sales trends
-* Checked duplicate and null records
-* Performed business insights analysis
-* Exported results through Jupyter Notebook
+### Week 2: SQL Data Analysis
+*Demonstrates SQL-based data analysis on the Superstore sales dataset.*
+- Converted CSVs into local relational SQL tables.
+- Applied aggregate functions (`SUM`, `AVG`, `COUNT`) and filters (`WHERE`, `HAVING`).
+- Identified top-performing products and customer demographics.
 
-## SQL Concepts Used
+### Week 3: SQL Subqueries & Joins
+*In-depth utilization of CTEs and analytical window functions.*
+- Applied subqueries to filter rows against aggregated averages.
+- Used CTEs to break down complex queries into readable, debuggable named blocks.
+- Calculated rank and row numbers using Window Functions.
 
-* SELECT
-* WHERE
-* GROUP BY
-* ORDER BY
-* HAVING
-* LIMIT
-* Aggregate Functions
+### Week 4: Azure Cloud Fundamentals & ADF Pipelines
+*Design and implementation of cloud-based data movement.*
+- Configured Resource Groups, Storage Accounts, and Blob Storage Containers.
+- Set up an Azure Data Factory (ADF) instance.
+- Built a data movement pipeline: `Get Metadata` -> validation -> `Copy Data` activity.
 
-  * SUM()
-  * AVG()
-  * COUNT()
-  * MAX()
-  * MIN()
-* DISTINCT
-* Data Validation Queries
+### Week 5 & 6: Apache Spark & PySpark
+*Processing data at scale with Apache Spark.*
+- Built PySpark scripts to clean and transform datasets.
+- Handled schema definition and dataframe optimization.
 
-## Tools Used
-
-* Python
-* Pandas
-* SQLite
-* Jupyter Notebook
-
-## Dataset Used
-
-* Superstore Sales Dataset (.csv.gz)
-
-
-# SuyashMaheshwari_JECRC(College)_Week-3_SQL(Subqueries)
-
-What I used and when:
-
-Subqueries — filtering rows against an aggregated value (like avg or max). Works well for simple comparisons
-CTEs — breaking down complex queries into readable named blocks. Way easier to debug than deeply nested subqueries
-Window Functions — RANK(), ROW_NUMBER(), DENSE_RANK() for ordering and numbering without collapsing the result set the way GROUP BY does
-Key findings:
-
-Sean Miller is the #1 customer at 17.5k order
-Jeffrey Brumfield is at the very bottom with just $3.52 total
-Only 294 out of 793 customers (about 37%) are above the average total sales of ~$2297
-12 customers placed just a single order — most of these overlap with the lowest spenders
-The data is heavily right-skewed with a small number of high-value customers pulling the average up
-
-## Project Outcome
-
-The project successfully demonstrated how SQL queries can be used for business-oriented sales analysis, customer insights, product performance evaluation, and data quality validation using a real-world dataset.
-
-
-# SuyashMaheshwari_JECRC(College)_Week-4_Azure Cloud Fundamentals and Data Pipeline Implementation using ADF
-
- 
-Objective
-To understand Azure cloud concepts and build an end-to-end data pipeline using Azure Storage Account and Azure Data Factory.
-
-Dataset
-Sample - Superstore.csv
-
-Azure Services Used
-Azure Resource Group
-Azure Storage Account
-Azure Blob Storage
-Azure Data Factory (ADF)
-Steps Performed
-Created a Resource Group.
-Created an Azure Storage Account.
-Created Blob Containers:
-input-data
-output-data
-Uploaded Sample-Superstore.csv to the input container.
-Created an Azure Data Factory instance.
-Configured Blob Storage Linked Service.
-Created Source and Destination CSV Datasets.
-Added Get Metadata activity to validate source file information.
-Added Copy Data activity to copy data from input-data to output-data.
-Executed the pipeline using Debug/Trigger.
-Monitored execution and verified successful completion.
-Verified the copied file in the output container.
-Configured required IAM role assignments.
-Pipeline Flow
-Input Blob Container → Get Metadata → Copy Data → Output Blob Container
-
-Result
-The pipeline executed successfully. Metadata validation and file copy operations completed without errors, and the destination file was successfully created in the output container.
-
-Screenshots Included
-Resource Group Overview
-Storage Account
-Input Container
-Azure Data Factory Home
-Linked Service
-Source Dataset
-Destination Dataset
-Get Metadata Activity
-Copy Data Activity
-Pipeline Success
-Monitor Runs
-Output Container
-IAM Role Assignment
-Conclusion
-Successfully implemented an end-to-end Azure Data Factory pipeline using Azure Blob Storage as source and destination, including metadata validation, data movement, monitoring, and access management.
- 
+### Week 8: E-Commerce Analytics System
+*A complete end-to-end data pipeline built with Python and SQL.*
+- **Data Generation**: Generates transactional datasets with intentional quality anomalies.
+- **Data Cleaning**: Python pipeline normalizing email formats, correcting dates, and capping bounds.
+- **SQL Analysis**: 16 analytical queries (aggregations, cohort retention, YoY growth, and self-joins).
+- **CLI Tool**: Stdlib-only reporting tool generating daily, weekly, and monthly summaries with periodic comparisons.

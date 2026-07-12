@@ -3,3 +3,4 @@
 **/raw/*.csv
 **/cleaned/*.csv
 **/__pycache__/
+.venv/
