@@ -14,6 +14,7 @@ This repository is structured sequentially to showcase learning milestones and p
 | **[Week 4](./Week-04_Azure_Data_Factory)** | Azure ADF Pipelines | Building end-to-end blob storage copy pipelines with metadata validation | `Azure Blob Storage`, `Data Factory`, `IAM` |
 | **[Week 5](./Week-05_Spark_Introduction)** | Spark Dataframes | Loading and analyzing datasets with Apache Spark DataFrames | `Apache Spark`, `PySpark` |
 | **[Week 6](./Week-06_PySpark_DataFrame)** | Advanced PySpark | Executing PySpark operations on larger datasets and optimizing execution | `Apache Spark`, `PySpark` |
+| **[Week 7](./Week-07_Delta_Lake_Assignment)** | Delta Lake Ingestion | Incremental data updates (SCD Type 1) using Spark and Delta tables | `PySpark`, `Delta Lake`, `SCD` |
 | **[Week 8](./Week-08_Ecommerce_Analytics)** | E-Commerce Analytics System | Refactored transaction data pipeline with robust cleaning and CLI | `Python`, `SQLite`, `Pandas`, `CLI` |
 
 ---
@@ -48,6 +49,12 @@ This repository is structured sequentially to showcase learning milestones and p
 *Processing data at scale with Apache Spark.*
 - Built PySpark scripts to clean and transform datasets.
 - Handled schema definition and dataframe optimization.
+
+### Week 7: Delta Lake Ingestion
+*Incremental data updates (SCD Type 1) using Spark and Delta tables.*
+- Configured Spark session for Delta extensions and catalogs.
+- Performed deduplication, NULL resolution, and loaded clean customer profiles.
+- Applied Delta `MERGE` statements to perform updates and insertions.
 
 ### Week 8: E-Commerce Analytics System
 *A complete end-to-end data pipeline built with Python and SQL.*

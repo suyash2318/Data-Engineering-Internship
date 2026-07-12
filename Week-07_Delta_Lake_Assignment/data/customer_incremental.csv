@@ -1,0 +1,4 @@
+customer_id,customer_name,email,city,last_updated
+102,Jane Smith,jane_new@example.com,San Francisco,2026-07-12
+104,Alice Brown,alice@example.com,Houston,2026-07-12
+106,Charlie Green,charlie@example.com,Seattle,2026-07-12
